@@ -1,5 +1,7 @@
 # bus-bus
 
+[![CI](https://github.com/jiangyue95/bus-bus/actions/workflows/ci.yml/badge.svg)](https://github.com/jiangyue95/bus-bus/actions/workflows/ci.yml)
+
 A real-time map of Dublin buses.
 
 bus-bus is a backend-focused project. The Spring Boot backend polls the NTA GTFS-Realtime feed, combines it with GTFS Static data, and exposes a versioned REST API. The web client is a thin client that only displays what the API returns. An iOS client is planned as a follow-up.
