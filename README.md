@@ -32,6 +32,8 @@ frontend/   Web client (not started yet)
 
 ## Run the backend
 
+The backend needs an NTA API key to fetch live data. Copy `.env.example` to `.env` and set `NTA_API_KEY`. Without a key the app still starts, but polling is disabled and the vehicle list stays empty.
+
 ```bash
 cd backend
 ./mvnw spring-boot:run
@@ -42,3 +44,9 @@ Then check that it is up:
 ```bash
 curl localhost:8080/actuator/health
 ```
+
+## API
+
+| Endpoint | Description |
+|---|---|
+| `GET /api/v1/vehicles` | Latest vehicle positions, with the feed timestamp and the time of the last successful fetch |
