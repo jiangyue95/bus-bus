@@ -35,7 +35,7 @@ public class VehicleFeedParser {
 			return false;
 		}
 		Position position = vehiclePosition.getPosition();
-		return position.getLatitude() != 0f || position.getLongitude() != 0f;
+		return true;
 	}
 
 	private Vehicle toVehicle(FeedEntity entity) {
