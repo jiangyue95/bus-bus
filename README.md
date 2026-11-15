@@ -32,7 +32,16 @@ frontend/   Web client (not started yet)
 
 ## Run the backend
 
-The backend needs an NTA API key to fetch live data. Copy `.env.example` to `.env` and set `NTA_API_KEY`. Without a key the app still starts, but polling is disabled and the vehicle list stays empty.
+The backend needs a local PostgreSQL server with two databases, one for development and one for tests:
+
+```bash
+createdb busbus
+createdb busbus_test
+```
+
+By default it connects as a role named after your OS user with no password, which matches a Homebrew install. Set `DB_URL`, `DB_USER` and `DB_PASSWORD` in `.env` to override this. Flyway creates the tables when the app starts.
+
+The backend also needs an NTA API key to fetch live data. Copy `.env.example` to `.env` and set `NTA_API_KEY`. Without a key the app still starts, but polling is disabled and the vehicle list stays empty.
 
 ```bash
 cd backend
